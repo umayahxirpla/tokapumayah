@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-
-// ihfuigygjbjksggy
+use App\User;
+use Auth;
 
 class userSettingController extends Controller
 {
     public function form()
     {
-    	return view('admin.pages.user.setting');
+    	$data = User::where('id',Auth::id())->first();
+    	return view('admin.pages.user.setting',['dt'=>$data]);
+    }
+
+    public function update()
+    {
+    	return "Fungsi Update";
     }
 }

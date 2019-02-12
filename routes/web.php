@@ -22,7 +22,8 @@ Route::group(['middleware'=>['auth']], function(){
 		})->name('admin.home');
 
 		Route::prefix('user')->group(function(){
-			Route::get('/setting','UserSettingController@form')->name('admin.user.setting');
+			Route::get('/setting','userSettingController@form')->name('admin.user.setting');
+			Route::post('/setting','userSettingController@update');
 		});
 });
 });

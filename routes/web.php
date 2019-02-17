@@ -22,7 +22,9 @@ Route::group(['middleware'=>['auth']], function(){
 		})->name('admin.home');
 
 		Route::prefix('user')->group(function(){
-			Route::get('/','UserController@daftar')->name('admin.user');
+			
+			Route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
+
 			Route::get('/setting','userSettingController@form')->name('admin.user.setting');
 			Route::post('/setting','userSettingController@update');
 		});

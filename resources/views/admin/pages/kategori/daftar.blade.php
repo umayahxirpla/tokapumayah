@@ -133,9 +133,8 @@ $(function(){
 	});
 
 	$('.btn-delete').click(function(){
-		alert($('#input-id').val());
+		$('#form-delete').submit();
 	});
-
-})
+});
 </script>
 @endpush
